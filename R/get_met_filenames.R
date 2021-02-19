@@ -15,7 +15,8 @@
 #' get_met_filenames(met_type = "reanalysis", target_year = "2020")
 get_met_filenames <- function(met_type = "gdas1",
                               target_year = NA,
-                              verbose = TRUE){
+                              verbose = TRUE,
+                              chromepath = "C:/Program Files/Google/Chrome/Application/"){
   # met data availability/param checks
   if(!isTRUE(met_type == "gdas1") && !isTRUE(met_type == "reanalysis")){
     stop("gdas1 and reanalysis are the only met_types currently supported.")
@@ -54,7 +55,7 @@ get_met_filenames <- function(met_type = "gdas1",
     rm(remDr,envir = parent.frame())
   })
   ### Fire up the remote server in chrome using whatever version is installed.
-  chromeversion <- toString(dir(path = 'C:/Program Files/Google/Chrome/Application/')) %>%
+  chromeversion <- toString(dir(path = chromepath)) %>%
     str_extract(., '^\\d+\\.\\d+\\.\\d+\\.') %>%
     str_replace_all(., '\\.', '\\\\.')
   chromedriver <-  str_extract_all(toString(list_versions("chromedriver")), paste0(chromeversion, '\\d+'), simplify = TRUE) %>%
