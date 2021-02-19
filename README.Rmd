@@ -30,6 +30,10 @@ This package was intended for downloading large volumes of Global Data Assimilat
 
 **dlmet** is hosted on github, and can be insalled via the **devtools** package.
 
+<!--
+
 ```r
 devtools::install_github("MRPHarris/dlmet")
 ```
+
+-->
