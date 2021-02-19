@@ -2,7 +2,7 @@
 % Please edit documentation in R/grab_objects_onpage.R
 \name{grab_objects_onpage}
 \alias{grab_objects_onpage}
-\title{List objects on a NOAA ftp archive page.}
+\title{List objects on the current NOAA ftp archive page.}
 \usage{
 grab_objects_onpage(object_type = "all", output_names = TRUE)
 }
@@ -17,7 +17,7 @@ A data frame containing all the filenames in the specified NOAA ftp met director
 A data frame containing filenames from the target_year (if !is.NA).
 }
 \description{
-Interrogate/list contents of table on a NOAA ftp server page.
+Interrogate/list contents of the table on the current NOAA ftp server page.
 }
 \examples{
 list_objects_onpage(object_type = "folder", output_names = FALSE)
