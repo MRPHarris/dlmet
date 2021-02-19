@@ -1,6 +1,6 @@
-#' Initialise an RSelenium client with Chrome
+#' Initialise an RSelenium WebDriver client with Chrome
 #'
-#' Start up a remote server with RSelenium. This will check to confirm
+#' Start up a remote WebDriver with RSelenium. This will check to confirm
 #' everything is working properly. Option terminate immediately.
 #'
 #' @param verbose TRUE/FALSE generate query window prior to running.

@@ -37,6 +37,8 @@ package.
 
 <!--
 
+testdoc
+
 ```r
 devtools::install_github("MRPHarris/dlmet")
 ```

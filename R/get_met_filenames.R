@@ -1,6 +1,6 @@
 #' Scrape the filenames of the designated met type from the NOAA ftp server.
 #'
-#' @description Use RSelenium and Google Chrome to initiate a remote server, navi
+#' @description Use RSelenium and Google Chrome to initiate a remote WebDriver, navi
 #' gate to the NOAA ftp server, and scrape the file names of the specified met type.
 #'
 #' @param met_type type of NOAA met data (character string; either "gdas1" or "reanalysis").

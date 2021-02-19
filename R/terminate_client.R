@@ -1,7 +1,7 @@
-#' Terminate an RSelenium client
+#' Terminate an RSelenium WebDriver client
 #'
 #' Terminate the default RSelenium client remDr. Closes window, ends server,
-#' stops Java process.
+#' stops Java processes.
 #'
 #' @param verbose TRUE/FALSE generate query window prior to running.
 #'

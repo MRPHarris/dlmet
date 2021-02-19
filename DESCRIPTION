@@ -7,7 +7,7 @@ Authors@R: person("Matthew", "Harris", email = "m.r.p.harris@keele.ac.uk",
 Author: Matthew Harris [aut, cre]
 Maintainer: Matthew Harris <m.r.p.harris@keele.ac.uk>
 Description: A small package that uses RSelenium to web-scrape the names of 
-  meteorological files on the NOAA ftp server, and download them.
+  files on the NOAA ftp server, and download them. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -24,3 +24,4 @@ Imports:
     xml2
 Depends: 
     R (>= 3.1)
+RoxygenNote: 7.1.1

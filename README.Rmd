@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # dlmet
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 **dlmet** is an **R** package that streamlines bulk downloading of files from the NOAA ftp archive server. Typically when a user seeks to download a piece of data from the NOAA archive ("ftp://arlftp.arlhq.noaa.gov/archives/"), they navigate to the file in question using a web browser and select individual files for download. Downloading multiple files in this manner can be very tedious.

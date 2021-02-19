@@ -1,6 +1,6 @@
-#' List objects on a NOAA ftp archive page.
+#' List objects on the current NOAA ftp archive page.
 #'
-#' @description Interrogate/list contents of table on a NOAA ftp server page.
+#' @description Interrogate/list contents of the table on the current NOAA ftp server page.
 #'
 #' @param object_type get object names/details of type 'file','folder', or 'all'.
 #' @param output_names TRUE/FALSE store object details as data frame.
