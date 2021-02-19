@@ -6,9 +6,11 @@
 #' @param met_type type of NOAA met data (character string; either "gdas1" or "reanalysis").
 #' @param target_year year of data frame subset, if any.
 #' @param verbose TRUE/FALSE for window prompt to continue with function.
+#' @param chromepath path leading to the Chrome installation directory.
 #'
 #' @return A data frame containing all the filenames in the specified NOAA ftp met directory.
 #' @return A data frame containing filenames from the target_year (if !is.NA).
+#'
 #' @export
 #'
 #' @examples

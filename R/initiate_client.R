@@ -6,7 +6,7 @@
 #' @param verbose TRUE/FALSE generate query window prior to running.
 #' @param chromepath directory of google chrome install.
 #' @param terminate TRUE/FALSE terminate client immediately after starting.
-#' @param init_url URL that the client will navigate to upon launching.
+#' @param init_url URL that the client will navigate to upon launching. NOAA archive by default.
 #'
 #' @export
 initiate_client <- function(verbose = FALSE,

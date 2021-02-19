@@ -5,8 +5,7 @@
 #' @param object_type get object names/details of type 'file','folder', or 'all'.
 #' @param output_names TRUE/FALSE store object details as data frame.
 #'
-#' @return A data frame containing all the filenames in the specified NOAA ftp met directory.
-#' @return A data frame containing filenames from the target_year (if !is.NA).
+#' @return A data frame containing all the filenames of object_type in the specified NOAA ftp directory.
 #' @export
 #'
 #' @examples
