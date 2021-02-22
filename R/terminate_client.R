@@ -6,7 +6,9 @@
 #' @param verbose TRUE/FALSE generate query window prior to running.
 #'
 #' @export
-terminate_client <- function(verbose = FALSE){
+terminate_client <- function(WebDriver = remDr,
+                             WebDriverName = "remDr",
+                             verbose = FALSE){
   if(isTRUE(verbose)){
     PromptContinue <- if(interactive()){
       askYesNo("This function will terminate the RSelenium client, along with any active Java processes. Proceed?",
@@ -16,34 +18,55 @@ terminate_client <- function(verbose = FALSE){
       stop("User terminated function")
     }
   }
-  if(exists("remDr", envir = parent.frame())){
-    tryCatch(
+  closewindow <- function(){
+    check <- tryCatch(
       suppressMessages({
-        remDr$client$closeWindow()
+        WebDriver$client$closeWindow() # Close window, only display tryCatch() error.
       }),
-      error = function(cond) {
-        message(paste0("Can't close the client window."))
-        message("Here's the original error message:")
-        message(cond)
-        },
-      warning = function(){
-        message(paste0("Client window close attempt returned a warning"))
-        message("Here's the original warning message:")
-        message(cond)
+      error = function(err){
+        message(paste0("Can't close the client window for ",WebDriverName,". It may not exist.")) # in case of error
+        message("Error returned by rsDriver:")
+        message(err)
+      },
+      warning = function(warn){
+        message(paste0("Client window close attempt returned a warning")) # in case of warn (not likely)
+        message("Warning returned by rsDriver:")
+        message(warn)
       }
     )
-    remDr$server$stop()
-    message("Client window closed, server stopped.")
-    message("Looking for Java.exe")
-    java_stat <- shell('tasklist /FI "IMAGENAME eq java.exe" 2>NUL | find /I /N "java.exe">NUL', mustWork = NA, intern = FALSE)
-    if(java_stat == 0){
-      message("Java.exe detected; terminating process") # java is kill
-      system("taskkill /im java.exe /f", intern=FALSE, ignore.stdout=FALSE) # no
-    } else if(java_stat == 1){
-      message("That's odd! No java processes to terminate.")
-    }
-  } else{
-    message("No object 'remDr' in the parent.frame()")
+    return(check)
   }
- message(paste0("Client ended successfully"))
+  check <- closewindow()
+  if(is.null(check)){
+    windowstat <- "Success"
+  } else if(!is.null(check)){
+    windowstat <- "Failed"
+  }
+  serverstop <- WebDriver$server$stop()
+  if(isTRUE(serverstop)){
+    serverstat <- "Success"
+  } else if(!isTRUE(serverstop)){
+    message("Server ",WebDriverName," could not be stopped. It may not exist.")
+    serverstat <- "Fail"
+  }
+  java_stat <- shell('tasklist /FI "IMAGENAME eq java.exe" 2>NUL | find /I /N "java.exe">NUL', mustWork = NA, intern = FALSE)
+  if(java_stat == 0){
+    message("Java.exe detected; terminating process") # java is kill
+    system("taskkill /im java.exe /f", intern=FALSE, ignore.stdout=FALSE) # no
+    javastat <- "Success"
+  } else if(java_stat == 1){
+    message("No java processes to terminate.")
+    javastat <- "Fail"
+  }
+  if(isTRUE(exists(WebDriverName, envir = parent.frame()))){
+    rm(list = c(WebDriverName),envir = parent.frame())
+    objstat <- "Success"
+  } else{
+    objstat <- "Fail"
+  }
+  message("Summary of termination attempt for WebDriver client '",WebDriverName,"'","\n",
+          "Client window close attempt:      | ",windowstat,"\n",
+          "Client server stop attempt:       | ",serverstat,"\n",
+          "Java process termination attempt: | ",javastat,"\n",
+          "Binding object removal attempt:   | ",objstat)
 }

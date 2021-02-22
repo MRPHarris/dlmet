@@ -11,7 +11,8 @@
 #' @examples
 #' list_objects_onpage(object_type = "folder", output_names = FALSE)
 grab_objects_onpage <- function(object_type = "all",
-                                output_names = TRUE){
+                                output_names = TRUE,
+                                for_download = TRUE){
   message(paste0("Checking page with check_page_valid()","\n","..."))
   check <- check_page_valid()
   if(check == "Error"){
