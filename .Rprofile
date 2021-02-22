@@ -24,3 +24,5 @@ message("To-do list:","\n",
         "1) create straightforward navigation function","\n",
         "2) create download functions based on e.g. download_met_gdas1()","\n",
         "3) add simple tutorial to readme.Rmd")
+
+base_url <- "ftp://arlftp.arlhq.noaa.gov/archives/"
