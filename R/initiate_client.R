@@ -15,6 +15,10 @@ initiate_client <- function(WebDriverName = "remDr",
                             verbose = FALSE,
                             port = 4567L,
                             init_url = "ftp://arlftp.arlhq.noaa.gov/archives/"){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   if(isTRUE(verbose)){
     PromptContinue <- if(interactive()){
       askYesNo("This function will check if RSelenium is functioning. It will kill any active Java processes. Proceed?",

@@ -12,6 +12,10 @@
 #' check_page_valid(show_original_error = TRUE)
 #'
 check_page_valid <- function(show_original_error = FALSE){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   currenturl <- as.character(remDr$client$getCurrentUrl())
   out <- tryCatch({
     suppressMessages({

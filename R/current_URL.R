@@ -6,9 +6,11 @@
 #'
 #' @export
 #'
-#' @example
-#' navigate_client("https://www.bbc.com/")
 
 current_URL <- function(WebDriver = remDr){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,rJava,RSelenium,tidyverse)
   return(as.character(WebDriver$client$getCurrentUrl()))
 }

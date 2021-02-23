@@ -14,6 +14,10 @@
 grab_objects_onpage <- function(object_type = "all",
                                 for_download = TRUE,
                                 trim = FALSE){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   message(paste0("Checking page with check_page_valid()","\n","..."))
   check <- check_page_valid()
   if(check == "Error"){

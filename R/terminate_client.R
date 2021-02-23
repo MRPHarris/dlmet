@@ -11,6 +11,10 @@
 terminate_client <- function(WebDriver = remDr,
                              WebDriverName = "remDr",
                              verbose = FALSE){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   if(!isTRUE(exists(WebDriverName))){
     stop(message(paste0("No object named ",WebDriverName," in the Global Environment.")),"Couldn't find WebDriver")
   }

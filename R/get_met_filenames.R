@@ -19,6 +19,10 @@ get_met_filenames <- function(met_type = "gdas1",
                               target_year = NA,
                               verbose = TRUE,
                               chromepath = "C:/Program Files/Google/Chrome/Application/"){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   # met data availability/param checks
   if(!isTRUE(met_type == "gdas1") && !isTRUE(met_type == "reanalysis")){
     stop("gdas1 and reanalysis are the only met_types currently supported.")

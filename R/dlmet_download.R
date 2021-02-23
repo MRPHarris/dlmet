@@ -16,6 +16,10 @@ dlmet_download <- function(filenames,
                            dl_directory,
                            verbose = TRUE,
                            suppress_download_popups = FALSE){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   # 'full dataframe' including name, size, date, type. If yes, get filesize of download operation.
   if(isTRUE(is.data.frame(filenames))){
     cnames_checkagainst <- c("Name","Size","DateModified","Type")

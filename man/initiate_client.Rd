@@ -5,22 +5,25 @@
 \title{Initialise an RSelenium WebDriver client with Chrome}
 \usage{
 initiate_client(
-  verbose = FALSE,
+  WebDriverName = "remDr",
   chromepath = "C:/Program Files/Google/Chrome/Application/",
   terminate = FALSE,
+  verbose = FALSE,
+  port = 4567L,
   init_url = "ftp://arlftp.arlhq.noaa.gov/archives/"
 )
 }
 \arguments{
-\item{verbose}{TRUE/FALSE generate query window prior to running.}
+\item{WebDriverName}{Name of the webdriver to be created.}
 
-\item{chromepath}{directory of google chrome install.}
+\item{chromepath}{Directory of google chrome Application folder.}
 
 \item{terminate}{TRUE/FALSE terminate client immediately after starting.}
 
-\item{init_url}{URL that the client will navigate to upon launching.}
+\item{verbose}{TRUE/FALSE generate query window prior to running.}
+
+\item{init_url}{URL that the client will navigate to upon launching. NOAA archive by default.}
 }
 \description{
-Start up a remote WebDriver with RSelenium. This will check to confirm
-everything is working properly. Option terminate immediately.
+Start up a remote WebDriver with RSelenium. Option to terminate immediately.
 }

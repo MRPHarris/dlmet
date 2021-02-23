@@ -7,10 +7,12 @@
 #'
 #' @export
 #'
-#' @example
-#' navigate_client("https://www.bbc.com/")
 
 navigate_client <- function(navigate_to = "ftp://arlftp.arlhq.noaa.gov/archives/",
                             WebDriver = remDr){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,rJava,RSelenium,tidyverse)
   WebDriver$client$navigate(navigate_to)
 }

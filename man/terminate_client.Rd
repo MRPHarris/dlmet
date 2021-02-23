@@ -4,9 +4,13 @@
 \alias{terminate_client}
 \title{Terminate an RSelenium WebDriver client}
 \usage{
-terminate_client(verbose = FALSE)
+terminate_client(WebDriver = remDr, WebDriverName = "remDr", verbose = FALSE)
 }
 \arguments{
+\item{WebDriver}{The active binding object linked to the client.}
+
+\item{WebDriverName}{Name of the active binding object.}
+
 \item{verbose}{TRUE/FALSE generate query window prior to running.}
 }
 \description{

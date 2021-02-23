@@ -12,6 +12,10 @@
 terminate_client_nodriver <- function(verbose = FALSE,
                                       ping_check = FALSE,
                                       port = 4567L){
+  if(!require("pacman")){
+    install.packages("pacman")
+  }
+  pacman::p_load(binman,magrittr,pacman,pingr,rJava,RSelenium,tidyverse,utils,XML,xml2)
   if(isTRUE(verbose)){
     PromptContinue <- if(interactive()){
       askYesNo("This function will terminate any active Java processes. Proceed?",
