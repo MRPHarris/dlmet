@@ -17,6 +17,8 @@ get_met_filenames(
 \item{target_year}{year of data frame subset, if any.}
 
 \item{verbose}{TRUE/FALSE for window prompt to continue with function.}
+
+\item{chromepath}{path leading to the Chrome installation directory.}
 }
 \value{
 A data frame containing all the filenames in the specified NOAA ftp met directory.
