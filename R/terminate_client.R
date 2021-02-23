@@ -3,12 +3,17 @@
 #' Terminate the default RSelenium client remDr. Closes window, ends server,
 #' stops Java processes.
 #'
+#' @param WebDriver The active binding object linked to the client.
+#' @param WebDriverName Name of the active binding object.
 #' @param verbose TRUE/FALSE generate query window prior to running.
 #'
 #' @export
 terminate_client <- function(WebDriver = remDr,
                              WebDriverName = "remDr",
                              verbose = FALSE){
+  if(!isTRUE(exists(WebDriverName))){
+    stop(message(paste0("No object named ",WebDriverName," in the Global Environment.")),"Couldn't find WebDriver")
+  }
   if(isTRUE(verbose)){
     PromptContinue <- if(interactive()){
       askYesNo("This function will terminate the RSelenium client, along with any active Java processes. Proceed?",
@@ -27,6 +32,7 @@ terminate_client <- function(WebDriver = remDr,
         message(paste0("Can't close the client window for ",WebDriverName,". It may not exist.")) # in case of error
         message("Error returned by rsDriver:")
         message(err)
+        return("Error")
       },
       warning = function(warn){
         message(paste0("Client window close attempt returned a warning")) # in case of warn (not likely)
@@ -70,3 +76,5 @@ terminate_client <- function(WebDriver = remDr,
           "Java process termination attempt: | ",javastat,"\n",
           "Binding object removal attempt:   | ",objstat)
 }
+
+

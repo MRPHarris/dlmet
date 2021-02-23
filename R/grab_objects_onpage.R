@@ -12,7 +12,6 @@
 #' @examples
 #' list_objects_onpage(object_type = "folder", output_names = FALSE)
 grab_objects_onpage <- function(object_type = "all",
-                                output_names = TRUE,
                                 for_download = TRUE,
                                 trim = FALSE){
   message(paste0("Checking page with check_page_valid()","\n","..."))
@@ -47,16 +46,11 @@ grab_objects_onpage <- function(object_type = "all",
   message(paste0("Scraped objects from NOAA index '",noaasubdir_name,"'. Type = '",object_type,"'.","\n",
                  "There are ",nrow(object_names)," objects. Here's the head():"))
   print(head(object_names[,c(1,4)], n = 10))
-  if(isTRUE(output_names)){
-    if(isTRUE(trim)){
-      drop <- c("Size","DateModified","Type")
-      object_names <- gdas1_all_names %>%
-        ungroup %>%
-        select(-c(drop))
-    }
-    object_names <<- object_names
-    assign(paste0(noaasubdir_name,"_",object_type,"_names"),object_names,envir = parent.frame())
-    rm(object_names, envir = parent.frame())
-    message("Object details stored as ",noaasubdir_name,"_",object_type,"_names")
+  if(isTRUE(trim)){
+    drop <- c("Size","DateModified","Type")
+    object_names <- gdas1_all_names %>%
+      ungroup %>%
+      select(-c(drop))
   }
+  return(object_names)
 }
