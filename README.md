@@ -11,9 +11,9 @@
 
 **dlmet** is an **R** package that streamlines bulk downloading of files
 from the NOAA ftp archive server. Typically when a user seeks to
-download a piece of data from the NOAA archive
-(“<ftp://arlftp.arlhq.noaa.gov/archives/>”), they navigate to the file
-in question using a web browser and select individual files for
+download a piece of data from the [NOAA
+archive](%22ftp://arlftp.arlhq.noaa.gov/archives/%22), they navigate to
+the file in question using a web browser and select individual files for
 download. Downloading multiple files in this manner can be very tedious.
 Additionally, the NOAA archive can sometimes be inaccessible to standard
 web browsers for [some odd
