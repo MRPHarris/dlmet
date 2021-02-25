@@ -21,3 +21,6 @@ message("edit dlmet project .Rprofile with usethis::edit_r_profile(scope = 'proj
 
 library(dlmet)
 base_url <- "ftp://arlftp.arlhq.noaa.gov/archives/"
+
+# To-do list
+message("Priority: confirm standardised integration of terminate_java_win across branches and functions.")
