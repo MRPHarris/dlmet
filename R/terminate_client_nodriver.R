@@ -1,11 +1,12 @@
 #' Terminate an RSelenium WebDriver client that was orphaned between sessions.
 #'
-#' Terminate the default RSelenium client remDr. Closes window, ends server,
-#' stops Java processes. Use this if the active binding object was removed.
+#' Terminate the default RSelenium client remDr if there is no longer an active
+#' binding object. Stops Java processes. Use this if the active binding object
+#' was removed. Client window must be closed manually.
 #'
 #' @param verbose TRUE/FALSE generate query window prior to running.
 #' @param ping_check TRUE/FALSE to use pingr to check the designated port after terminating Java.
-#' @param port The port used for the WebDriver in initiate_client.
+#' @param port The port used for the WebDriver, to be checked if ping_check is TRUE.
 #'
 #' @export
 

@@ -2,18 +2,18 @@
 % Please edit documentation in R/terminate_client.R
 \name{terminate_client}
 \alias{terminate_client}
-\title{Terminate an RSelenium WebDriver client}
+\title{Terminate an RSelenium WebDriver.}
 \usage{
 terminate_client(WebDriver = remDr, WebDriverName = "remDr", verbose = FALSE)
 }
 \arguments{
-\item{WebDriver}{The active binding object linked to the client.}
+\item{WebDriver}{Active binding object containing the active WebDriver.}
 
-\item{WebDriverName}{Name of the active binding object.}
+\item{WebDriverName}{Name of the active binding object as characters.}
 
-\item{verbose}{TRUE/FALSE generate query window prior to running.}
+\item{verbose}{TRUE/FALSE to generate query window prior to running.}
 }
 \description{
-Terminate the default RSelenium client remDr. Closes window, ends server,
+Terminate the active WebDriver. Closes client window, ends server,
 stops Java processes.
 }

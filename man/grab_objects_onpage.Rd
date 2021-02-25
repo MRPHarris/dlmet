@@ -4,21 +4,21 @@
 \alias{grab_objects_onpage}
 \title{List objects on the current NOAA ftp archive page.}
 \usage{
-grab_objects_onpage(object_type = "all", for_download = TRUE, trim = FALSE)
+grab_objects_onpage(object_type = "all", trim = FALSE, return = TRUE)
 }
 \arguments{
-\item{object_type}{get object names/details of type 'file','folder', or 'all'.}
+\item{object_type}{Scrape names/details of type 'file','folder', or 'all'.}
 
-\item{trim}{TRUE/FALSE remove columns from output df other than filenames}
+\item{trim}{TRUE/FALSE to remove columns other than filenames.}
 
-\item{output_names}{TRUE/FALSE store object details as data frame.}
+\item{return}{TRUE/FALSE to return the scraped data.}
 }
 \value{
-A data frame containing all the filenames of object_type in the specified NOAA ftp directory.
+A data frame containing all the filenames of object_type from the current client web page.
 }
 \description{
 Interrogate/list contents of the table on the current NOAA ftp server page.
 }
 \examples{
-list_objects_onpage(object_type = "folder", output_names = FALSE)
+list_objects_onpage(object_type = "file", output_names = FALSE)
 }

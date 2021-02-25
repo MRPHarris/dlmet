@@ -18,11 +18,13 @@ initiate_client(
 
 \item{chromepath}{Directory of google chrome Application folder.}
 
-\item{terminate}{TRUE/FALSE terminate client immediately after starting.}
+\item{terminate}{TRUE/FALSE to terminate client immediately after starting.}
 
-\item{verbose}{TRUE/FALSE generate query window prior to running.}
+\item{verbose}{TRUE/FALSE to generate query window prior to running.}
 
-\item{init_url}{URL that the client will navigate to upon launching. NOAA archive by default.}
+\item{port}{Which port to use for the remote driver? Shares RSelenium's default of 4567L.}
+
+\item{init_url}{URL that the client will navigate to upon launching. NOAA ARL archive by default.}
 }
 \description{
 Start up a remote WebDriver with RSelenium. Option to terminate immediately.

@@ -12,13 +12,13 @@ get_met_filenames(
 )
 }
 \arguments{
-\item{met_type}{type of NOAA met data (character string; either "gdas1" or "reanalysis").}
+\item{met_type}{Type of NOAA met data (character string; either "gdas1" or "reanalysis").}
 
-\item{target_year}{year of data frame subset, if any.}
+\item{target_year}{Year of data frame subset, if any.}
 
-\item{verbose}{TRUE/FALSE for window prompt to continue with function.}
+\item{verbose}{TRUE/FALSE to generate query window prior to running.}
 
-\item{chromepath}{path leading to the Chrome installation directory.}
+\item{chromepath}{Path leading to the Chrome installation directory.}
 }
 \value{
 A data frame containing all the filenames in the specified NOAA ftp met directory.

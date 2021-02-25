@@ -2,18 +2,18 @@
 #'
 #' @description Interrogate/list contents of the table on the current NOAA ftp server page.
 #'
-#' @param object_type get object names/details of type 'file','folder', or 'all'.
-#' @param output_names TRUE/FALSE store object details as data frame.
-#' @param trim TRUE/FALSE remove columns from output df other than filenames
+#' @param object_type Scrape names/details of type 'file','folder', or 'all'.
+#' @param trim TRUE/FALSE to remove columns other than filenames.
+#' @param return TRUE/FALSE to return the scraped data.
 #'
-#' @return A data frame containing all the filenames of object_type in the specified NOAA ftp directory.
+#' @return A data frame containing all the filenames of object_type from the current client web page.
 #' @export
 #'
 #' @examples
-#' list_objects_onpage(object_type = "folder", output_names = FALSE)
+#' list_objects_onpage(object_type = "file", output_names = FALSE)
 grab_objects_onpage <- function(object_type = "all",
-                                for_download = TRUE,
-                                trim = FALSE){
+                                trim = FALSE,
+                                return = TRUE){
   if(!require("pacman")){
     install.packages("pacman")
   }
@@ -52,9 +52,11 @@ grab_objects_onpage <- function(object_type = "all",
   print(head(object_names[,c(1,4)], n = 10))
   if(isTRUE(trim)){
     drop <- c("Size","DateModified","Type")
-    object_names <- gdas1_all_names %>%
+    object_names <- object_names %>%
       ungroup %>%
       select(-c(drop))
   }
-  return(object_names)
+  if(isTRUE(return)){
+    return(object_names)
+  }
 }

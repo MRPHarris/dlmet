@@ -1,11 +1,11 @@
-#' Terminate an RSelenium WebDriver client
+#' Terminate an RSelenium WebDriver.
 #'
-#' Terminate the default RSelenium client remDr. Closes window, ends server,
+#' Terminate the active WebDriver. Closes client window, ends server,
 #' stops Java processes.
 #'
-#' @param WebDriver The active binding object linked to the client.
-#' @param WebDriverName Name of the active binding object.
-#' @param verbose TRUE/FALSE generate query window prior to running.
+#' @param WebDriver Active binding object containing the active WebDriver.
+#' @param WebDriverName Name of the active binding object as characters.
+#' @param verbose TRUE/FALSE to generate query window prior to running.
 #'
 #' @export
 terminate_client <- function(WebDriver = remDr,

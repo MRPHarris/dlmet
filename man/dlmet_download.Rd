@@ -13,13 +13,13 @@ dlmet_download(
 )
 }
 \arguments{
-\item{filenames}{a matrix or dataframe containing the filenames of the files to be downloaded.}
+\item{filenames}{A matrix or dataframe containing the filenames of the files to be downloaded.}
 
-\item{page_url}{the URL of the page from which the files are to be downloaded}
+\item{page_url}{The URL of the page from which the files are to be downloaded}
 
-\item{dl_directory}{the destination folder. Where do you want the files to go?}
+\item{dl_directory}{The destination folder. Where do you want the files to go?}
 
-\item{verbose}{TRUE/FALSE display prompt to continue with operation.}
+\item{verbose}{TRUE/FALSE to generate query window prior to running.}
 
 \item{suppress_download_popups}{TRUE/FALSE to stop download.file popups}
 }

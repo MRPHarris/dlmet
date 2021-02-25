@@ -2,10 +2,10 @@
 #'
 #' @description Download files using a list returned by other dlmet functions.
 #'
-#' @param filenames a matrix or dataframe containing the filenames of the files to be downloaded.
-#' @param page_url the URL of the page from which the files are to be downloaded
-#' @param dl_directory the destination folder. Where do you want the files to go?
-#' @param verbose TRUE/FALSE display prompt to continue with operation.
+#' @param filenames A matrix or dataframe containing the filenames of the files to be downloaded.
+#' @param page_url The URL of the page from which the files are to be downloaded
+#' @param dl_directory The destination folder. Where do you want the files to go?
+#' @param verbose TRUE/FALSE to generate query window prior to running.
 #' @param suppress_download_popups TRUE/FALSE to stop download.file popups
 #'
 #' @export

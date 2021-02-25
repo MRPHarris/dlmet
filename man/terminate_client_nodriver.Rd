@@ -11,9 +11,10 @@ terminate_client_nodriver(verbose = FALSE, ping_check = FALSE, port = 4567L)
 
 \item{ping_check}{TRUE/FALSE to use pingr to check the designated port after terminating Java.}
 
-\item{port}{The port used for the WebDriver in initiate_client.}
+\item{port}{The port used for the WebDriver, to be checked if ping_check is TRUE.}
 }
 \description{
-Terminate the default RSelenium client remDr. Closes window, ends server,
-stops Java processes. Use this if the active binding object was removed.
+Terminate the default RSelenium client remDr if there is no longer an active
+binding object. Stops Java processes. Use this if the active binding object
+was removed. Client window must be closed manually.
 }

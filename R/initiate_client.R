@@ -4,9 +4,10 @@
 #'
 #' @param WebDriverName Name of the webdriver to be created.
 #' @param chromepath Directory of google chrome Application folder.
-#' @param terminate TRUE/FALSE terminate client immediately after starting.
-#' @param verbose TRUE/FALSE generate query window prior to running.
-#' @param init_url URL that the client will navigate to upon launching. NOAA archive by default.
+#' @param terminate TRUE/FALSE to terminate client immediately after starting.
+#' @param verbose TRUE/FALSE to generate query window prior to running.
+#' @param port Which port to use for the remote driver? Shares RSelenium's default of 4567L.
+#' @param init_url URL that the client will navigate to upon launching. NOAA ARL archive by default.
 #'
 #' @export
 initiate_client <- function(WebDriverName = "remDr",
