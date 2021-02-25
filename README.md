@@ -106,7 +106,7 @@ package.
 devtools::install_github("MRPHarris/dlmet")
 ```
 
-### Notes on OS compatibility
+#### Notes on OS compatibility
 
 Currently **dlmet** is only tested for Windows. It is unlikely to work
 on Mac or any other OS at the moment, for a few key reasons. However,
@@ -115,9 +115,9 @@ the package - I just don’t have access to a Mac.
 
 1.  Terminating a WebDriver client requires a system() call that ends
     java processes on the system. I am unfamiliar with system commands
-    on other systems, but I assume (perhaps incorrectly) that the syntax
-    and process is a bit different.
+    on other operating systems, but I assume (perhaps incorrectly) that
+    the syntax and process is a bit different.
 
-2.  Installation + running of RSelenium requires the user to jump a few
-    [extra
+2.  Installation + running of RSelenium on Mac requires the user to jump
+    a few [extra
     hoops](https://stackoverflow.com/questions/50880725/rselenium-installation-on-macbook-with-chrome).
