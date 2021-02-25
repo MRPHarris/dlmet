@@ -4,7 +4,7 @@
 # dlmet
 
 <p align="center">
-<img src="man/figures/dlmet_icon.png" height="250px" />
+<img src="man/figures/dlmet_icon_update.png" height="250px" />
 </p>
 <!-- badges: start -->
 <!-- badges: end -->
