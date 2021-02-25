@@ -10,13 +10,13 @@
 <!-- badges: end -->
 
 **dlmet** is an **R** package that streamlines bulk downloading of files
-from the NOAA ftp archive server. Typically when a user seeks to
-download a piece of data from the [NOAA
-archive](%22ftp://arlftp.arlhq.noaa.gov/archives/%22), they navigate to
-the file in question using a web browser and select individual files for
-download. Downloading multiple files in this manner can be very tedious.
-Additionally, the NOAA archive can sometimes be inaccessible to standard
-web browsers for [some odd
+from the NOAA ARL ftp archive server. Typically when a user seeks to
+download a piece of data from the [NOAA ARL
+archive](%22https://www.ready.noaa.gov/archives.php%22), they navigate
+to the file in question using a web browser and select individual files
+for download. Downloading multiple files in this manner can be very
+tedious. Additionally, the NOAA archive can sometimes be inaccessible to
+standard web browsers for [some odd
 reason](https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2103).
 
 The **dlmet** package speeds up this process considerably. Using two to
@@ -49,7 +49,7 @@ straightforward.
 
     navigate_client("ftp://arlftp.arlhq.noaa.gov/archives/gdas1")
 
-Scrape all the objects on the page.
+Scrape all the objects within the page html table.
 
     gdas1_all_items <- grab_objects_onpage()
 
@@ -110,7 +110,7 @@ devtools::install_github("MRPHarris/dlmet")
 
 Currently **dlmet** is only tested for Windows. It is unlikely to work
 on Mac or any other OS at the moment, for a few key reasons. However,
-these incopatibilities could be ironed out in a subsequent version of
+these incompatibilities could be ironed out in a subsequent version of
 the package - I just don’t have access to a Mac.
 
 1.  Terminating a WebDriver client requires a system() call that ends

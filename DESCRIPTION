@@ -1,6 +1,6 @@
 Package: dlmet
 Type: Package
-Title: Functions for remote downloading of certain NOAA ftp server data
+Title: Remotely scrape and bulk download data from the NOAA Air Resources Laboratory ftp server 
 Version: 0.1.0.9000
 Authors@R: person("Matthew", "Harris", email = "m.r.p.harris@keele.ac.uk",
   role = c("aut", "cre"))

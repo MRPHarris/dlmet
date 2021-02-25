@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-**dlmet** is an **R** package that streamlines bulk downloading of files from the NOAA ftp archive server. Typically when a user seeks to download a piece of data from the [NOAA archive]("ftp://arlftp.arlhq.noaa.gov/archives/"), they navigate to the file in question using a web browser and select individual files for download. Downloading multiple files in this manner can be very tedious. Additionally, the NOAA archive can sometimes be inaccessible to standard web browsers for [some odd reason](https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2103).
+**dlmet** is an **R** package that streamlines bulk downloading of files from the NOAA ARL ftp archive server. Typically when a user seeks to download a piece of data from the [NOAA ARL archive]("https://www.ready.noaa.gov/archives.php"), they navigate to the file in question using a web browser and select individual files for download. Downloading multiple files in this manner can be very tedious. Additionally, the NOAA archive can sometimes be inaccessible to standard web browsers for [some odd reason](https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2103).
 
 The **dlmet** package speeds up this process considerably. Using two to three functions in a simple workflow, users can download large groups of files from any directory within the NOAA archive. **dlmet** uses [**RSelenium**](https://cran.r-project.org/web/packages/RSelenium/index.html) for the web-scraping of file names, ensuring that said file names are current. The user could easily use the remote web client to download files outside of the original scope for this package. 
 
@@ -44,7 +44,7 @@ After this, navigating to the desired subfolder of the archive is straightforwar
 navigate_client("ftp://arlftp.arlhq.noaa.gov/archives/gdas1")
 ```
 
-Scrape all the objects on the page.
+Scrape all the objects within the page html table.
 
 ```
 gdas1_all_items <- grab_objects_onpage()
@@ -90,7 +90,7 @@ devtools::install_github("MRPHarris/dlmet")
 
 #### Notes on OS compatibility
 
-Currently **dlmet** is only tested for Windows. It is unlikely to work on Mac or any other OS at the moment, for a few key reasons. However, these incopatibilities could be ironed out in a subsequent version of the package - I just don't have access to a Mac.
+Currently **dlmet** is only tested for Windows. It is unlikely to work on Mac or any other OS at the moment, for a few key reasons. However, these incompatibilities could be ironed out in a subsequent version of the package - I just don't have access to a Mac.
 
 1) Terminating a WebDriver client requires a system() call that ends java processes on the system. I am unfamiliar with system commands on other operating systems, but I assume (perhaps incorrectly) that the syntax and process is a bit different.
 
