@@ -45,15 +45,8 @@ get_met_filenames <- function(met_type = "gdas1",
     }
     message(paste0("User gave go-ahead. Scraping ", met_type," file names with RSelenium + Chrome..."))
   }
-  ### where were you when java was terminated
-  message("Looking for Java.exe")
-  java_stat <- shell('tasklist /FI "IMAGENAME eq java.exe" 2>NUL | find /I /N "java.exe">NUL', mustWork = NA, intern = FALSE)
-  if(java_stat == 0){
-    message("Java.exe detected; terminating process") # java is kill
-    system("taskkill /im java.exe /f", intern=FALSE, ignore.stdout=FALSE) # no
-  } else if(java_stat == 1){
-    message("No previous Java processes to terminate.")
-  }
+  ### Terminate Java for windows. No Mac support as yet.
+  terminate_java_win()
   ### Terminate rsDriver instances in the workspace.
   try(if(exists("remDr", envir = parent.frame())){
     remDr$client$closeWindow()
@@ -76,7 +69,7 @@ get_met_filenames <- function(met_type = "gdas1",
   } else if (met_type == "reanalysis"){
     link <- "ftp://arlftp.arlhq.noaa.gov/archives/reanalysis"
   }
-  remDr$client$navigate(link)
+  navigate_client(link)
   ### Do the scraping
   met_html_table <- remDr$client$findElement(using = 'xpath', "/html/body/table/tbody") # Finds met file html table matching xpath
   met_Elemtxt <- met_html_table$getElementAttribute("outerHTML")[[1]] # gets the html attributes to a text file

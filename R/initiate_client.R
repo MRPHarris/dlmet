@@ -31,13 +31,7 @@ initiate_client <- function(WebDriverName = "remDr",
   }
   # Terminate prior java processes
   message("Looking for Java.exe")
-  java_stat <- shell('tasklist /FI "IMAGENAME eq java.exe" 2>NUL | find /I /N "java.exe">NUL', mustWork = NA, intern = FALSE)
-  if(java_stat == 0){
-    message("Java.exe detected; terminating process") # java is kill
-    system("taskkill /im java.exe /f", intern=FALSE, ignore.stdout=FALSE) # no
-  } else if(java_stat == 1){
-    message("No previous Java processes to terminate.")
-  }
+  terminate_java_win()
   # Fire up the WebDriver
   chromeversion <- toString(dir(path = chromepath)) %>%
     str_extract(., '^\\d+\\.\\d+\\.\\d+\\.') %>%

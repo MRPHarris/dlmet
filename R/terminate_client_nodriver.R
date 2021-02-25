@@ -27,15 +27,8 @@ terminate_client_nodriver <- function(verbose = FALSE,
     }
   }
   message("If there is still a client window, it must be closed manually.","\n")
-  java_stat <- shell('tasklist /FI "IMAGENAME eq java.exe" 2>NUL | find /I /N "java.exe">NUL', mustWork = NA, intern = FALSE)
-  if(java_stat == 0){
-    message("Java.exe detected; terminating process") # java is kill
-    system("taskkill /im java.exe /f", intern=FALSE, ignore.stdout=FALSE) # no
-    javastat <- "Success"
-  } else if(java_stat == 1){
-    message("No java processes to terminate.")
-    javastat <- "Fail"
-  }
+  # terminate Java for windows. No Mac support as yet.
+  terminate_java_win()
   if(isTRUE(ping_check)){
     message("Using pingr::ping_port() to check if port ",port," is now inactive")
     #From https://stackoverflow.com/questions/14357219/function-for-retrieving-own-ip-address-from-within-r
