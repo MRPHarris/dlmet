@@ -15,7 +15,8 @@ initiate_client <- function(WebDriverName = "remDr",
                             terminate = FALSE,
                             verbose = FALSE,
                             port = 4567L,
-                            init_url = "ftp://arlftp.arlhq.noaa.gov/archives/"){
+                            init_url = "https://github.com/MRPHarris/dlmet/"){
+  # NOAA URL for testing "ftp://arlftp.arlhq.noaa.gov/archives/"
   if(!require("pacman")){
     install.packages("pacman")
   }
