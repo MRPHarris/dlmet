@@ -22,6 +22,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
+*Note: as of my testing on 12/04/21, the ARL ftp server is not accessible via a remote chrome WebDriver.* As a result, this package is a bit useless at present, though it's still a nice streamlined RSelenium wrapper. I suspect this failure is because of NOAA/ARL adding an extra credential  requirement, as I can still use a Windows 10 direct ftp method to download data. Deeply frustrating! I will test it weekly to see if the situation changes. As a band-aid fix, I've changed the default URL of dlmet::initiate_client(). This should prevent the browser from locking up when it tries (and fails) to access the ftp server. - Matt
+
 **dlmet** is an **R** package that streamlines bulk downloading of files from the NOAA ARL ftp archive server. Typically when a user seeks to download a piece of data from the [NOAA ARL archive]("https://www.ready.noaa.gov/archives.php"), they navigate to the file in question using a web browser and select individual files for download. Downloading multiple files in this manner can be very tedious. Additionally, the NOAA archive can sometimes be inaccessible to standard web browsers for [some odd reason](https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2103).
 
 The **dlmet** package speeds up this process considerably. Using two to three functions in a simple workflow, users can download large groups of files from any directory within the NOAA archive. **dlmet** uses [**RSelenium**](https://cran.r-project.org/web/packages/RSelenium/index.html) for the web-scraping of file names, ensuring that said file names are current. The user could easily use the remote web client to download files outside of the original scope for this package. 
