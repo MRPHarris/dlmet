@@ -18,6 +18,7 @@ Imports:
     pingr,
     rJava,
     RSelenium,
+    seleniumPipes,
     tidyverse,
     utils,
     XML,

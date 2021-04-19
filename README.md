@@ -10,15 +10,15 @@
 <!-- badges: end -->
 
 *Note: as of my testing on 12/04/21, the ARL ftp server is not
-accessible via a remote chrome WebDriver.* As a result, this package is
-a bit useless at present, though it’s still a nice streamlined RSelenium
-wrapper. I suspect this failure is because of NOAA/ARL adding an extra
-credential requirement, as I can still use a Windows 10 direct ftp
-method to download data. Deeply frustrating! I will test it weekly to
-see if the situation changes. As a band-aid fix, I’ve changed the
-default URL of dlmet::initiate\_client(). This should prevent the
-browser from locking up when it tries (and fails) to access the ftp
-server. - Matt
+accessible via a remote chrome WebDriver. This is due to google’s recent
+removal of ftp support. This can be re-enabled by changing flags within
+chrome, but these settings aren’t retained across WebDriver client
+sessions.* As a result, this package isn’t performing as it should at
+present. Deeply frustrating! It will probably need to run through
+firefox in future. I will test it weekly to see if the situation
+changes. As a band-aid fix, I’ve changed the default URL of
+dlmet::initiate\_client(). This should prevent the browser from locking
+up when it tries (and fails) to access the ftp server. - Matt
 
 **dlmet** is an **R** package that streamlines bulk downloading of files
 from the NOAA ARL ftp archive server. Typically when a user seeks to
