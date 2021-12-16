@@ -9,16 +9,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-*Note: as of my testing on 12/04/21, the ARL ftp server is not
-accessible via a remote chrome WebDriver. This is due to google’s recent
-removal of ftp support. This can be re-enabled by changing flags within
-chrome, but these settings aren’t retained across WebDriver client
-sessions.* As a result, this package isn’t performing as it should at
-present. Deeply frustrating! It will probably need to run through
-firefox in future. I will test it weekly to see if the situation
-changes. As a band-aid fix, I’ve changed the default URL of
-dlmet::initiate\_client(). This should prevent the browser from locking
-up when it tries (and fails) to access the ftp server. - Matt
+**From Chrome version 7 onwards, Google began removing ftp support from
+their browser. In early 2021, ftp support was completely removed.
+Firefox and Edge are following suit. As a result, the dlmet package no
+longer works as intended (scraping NOAA ftp server file names). I am
+leaving it up as a code repository of useful RSelenium code for my other
+projects. The remote webdriver still works! NOAA met data can be fetched
+directly from NOAA servers via e.g. windows explorer. Unfortunately (or
+fortunately, depending on who you ask), the days of webscraping file
+names from ftp servers via remote browsers has passed.**
+
+### Package description \[DEFUNT: SEE ABOVE\]
 
 **dlmet** is an **R** package that streamlines bulk downloading of files
 from the NOAA ARL ftp archive server. Typically when a user seeks to
