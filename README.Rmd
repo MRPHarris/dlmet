@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-**As of Chrome version 72, Google has begun removing ftp support from their browser. From early 2021, ftp support was completely removed. Firefox and Edge are following suit. As a result, the dlmet package no longer works as intended (scraping NOAA ftp server filenames). I am leaving it up as a code repository of useful RSelenium code for my other projects. The remote webdriver still works! NOAA met data can be fetched directly from NOAA servers via e.g. windows explorer. Unfortunately (or fortunately, depending on who you ask), the days of webscraping filenames from ftp servers via remote browsers has passed.**
+**From Chrome version 7 onward, Google began removing ftp support from their browser. In early 2021, ftp support was completely removed. Firefox and Edge are following suit. As a result, the dlmet package no longer works as intended (scraping NOAA ftp server file names). I am leaving it up as a code repository of useful RSelenium code for my other projects. The remote webdriver still works! NOAA met data can be fetched directly from NOAA servers via e.g. windows explorer. Unfortunately (or fortunately, depending on who you ask), the days of webscraping file names from ftp servers via remote browsers has passed.**
 
 ### Package description [DEFUNT: SEE ABOVE]
 

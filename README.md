@@ -9,7 +9,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-**From Chrome version 7 onwards, Google began removing ftp support from
+**From Chrome version 7 onward, Google began removing ftp support from
 their browser. In early 2021, ftp support was completely removed.
 Firefox and Edge are following suit. As a result, the dlmet package no
 longer works as intended (scraping NOAA ftp server file names). I am
