@@ -13,39 +13,34 @@
 their browser. In early 2021, ftp support was completely removed.
 Firefox and Edge are following suit. As a result, the dlmet package no
 longer works as intended (scraping NOAA ftp server file names). I am
-leaving it up as a code repository of useful RSelenium code for my other
+leaving it up as a repository of useful RSelenium code for my other
 projects. The remote webdriver still works! NOAA met data can be fetched
-directly from NOAA servers via e.g. windows explorer. Unfortunately (or
-fortunately, depending on who you ask), the days of webscraping file
-names from ftp servers via remote browsers has passed.**
+directly from NOAA servers via e.g. windows explorer.**
 
-### Package description \[DEFUNT: SEE ABOVE\]
+### Package description \[DEFUNCT: SEE ABOVE\]
 
-**dlmet** is an **R** package that streamlines bulk downloading of files
-from the NOAA ARL ftp archive server. Typically when a user seeks to
-download a piece of data from the [NOAA ARL
-archive](%22https://www.ready.noaa.gov/archives.php%22), they navigate
-to the file in question using a web browser and select individual files
-for download. Downloading multiple files in this manner can be very
-tedious. Additionally, the NOAA archive can sometimes be inaccessible to
-standard web browsers for [some odd
+**dlmet** was an **R** package built for web-scraping filenames from the
+[NOAA ARL archive](%22https://www.ready.noaa.gov/archives.php%22).
+Typically when a user seeks to download a piece of data from the [NOAA
+ARL archive](%22https://www.ready.noaa.gov/archives.php%22), they
+navigate to the file in question using a web browser and select
+individual files for download. Downloading multiple files in this manner
+can be very tedious. Additionally, the NOAA archive can sometimes be
+inaccessible to standard web browsers for [some odd
 reason](https://hysplitbbs.arl.noaa.gov/viewtopic.php?t=2103).
 
-The **dlmet** package speeds up this process considerably. Using two to
-three functions in a simple workflow, users can download large groups of
-files from any directory within the NOAA archive. **dlmet** uses
+The **dlmet** package sped up this process considerably, at least within
+R. Using two to three functions in a simple workflow, filenames could be
+scraped from the NOAA archive, parsed, and used for a direct download
+all in the R environment. **dlmet** uses
 [**RSelenium**](https://cran.r-project.org/web/packages/RSelenium/index.html)
 for the web-scraping of file names, ensuring that said file names are
 current. The user could easily use the remote web client to download
-files outside of the original scope for this package.
-
-This package was created originally to download large volumes of [Global
-Data Assimilation System](https://www.ready.noaa.gov/gdas1.php)
-meteorological data files for use in the HYSPLIT model via
-[splitr](https://github.com/rich-iannone/splitr). However, the functions
-are flexible; anyone seeking a way to easily download large amounts of
-NOAA data from the archive should be able to apply this package in a
-straightforward manner.
+files outside of the original scope for this package, which was to
+download large volumes of [Global Data Assimilation
+System](https://www.ready.noaa.gov/gdas1.php) meteorological data files
+for use in the HYSPLIT model via
+[splitr](https://github.com/rich-iannone/splitr).
 
 This package has no affiliation with NOAA.
 
@@ -78,8 +73,8 @@ time periods. e.g. April 2015:
 
 Now pass this data frame to the download function to get those
 meteorological files. This function can take a dataframe (such as that
-returned by grab\_objects\_onpage), a matrix, or a character vector. If
-the client is still on the same page, the function current\_URL() can be
+returned by grab_objects_onpage), a matrix, or a character vector. If
+the client is still on the same page, the function current_URL() can be
 used to easily direct the download function to the current webpage where
 the files are stored.
 
@@ -125,11 +120,11 @@ on Mac or any other OS at the moment, for a few key reasons. However,
 these incompatibilities could be ironed out in a subsequent version of
 the package - I just don’t have access to a Mac.
 
-1.  Terminating a WebDriver client requires a system() call that ends
+1)  Terminating a WebDriver client requires a system() call that ends
     java processes on the system. I am unfamiliar with system commands
     on other operating systems, but I assume (perhaps incorrectly) that
     the syntax and process is a bit different.
 
-2.  Installation + running of RSelenium on Mac requires the user to jump
+2)  Installation + running of RSelenium on Mac requires the user to jump
     a few [extra
     hoops](https://stackoverflow.com/questions/50880725/rselenium-installation-on-macbook-with-chrome).
